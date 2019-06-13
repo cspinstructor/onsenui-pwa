@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Onsen PWA First Demo</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/onsenui/css/onsenui.min.css"
@@ -14,8 +14,19 @@
       href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"
     />
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('sw.js')
+          .then(() => console.log('Service Worker Registered'))
+          .catch(e => console.log(e));
+      }
+    </script>
   </head>
   <body>
-    <ons-button onclick="alert('You clicked me!')">Click Me</ons-button>
+    <div style="text-align: center; padding-top: 50%">
+      <ons-button onclick="alert('You clicked me!')">Click Me</ons-button>
+    </div>
   </body>
 </html>
